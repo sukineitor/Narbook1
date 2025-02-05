@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+
+:root {
+  --bg-color: #1a1a2e;
+  --paper-color: #f5f2e6;
+  --text-color: #2c3e50;
+  --accent-color: #34495e;
+  --decorative-color: #486683;
+  --quote-bg: #eae7d9;
+  --cave-color: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lora", serif;
+  padding: 20px;
+}
+
+.book-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.book {
+  background-color: var(--paper-color);
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.book::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, #34495e, var(--paper-color));
+}
+
+.book-content {
+  margin-left: 40px;
+  padding: clamp(1rem, 5vw, 3rem);
+  position: relative;
+}
+
+.book-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title-banner {
+  background-color: #c0392b;
+  color: white;
+  padding: 0.5rem 2rem;
+  margin: -1rem auto 1rem;
+  position: relative;
+  display: inline-block;
+  clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+}
+
+.title-banner h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-family: "Playfair Display", serif;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.article-meta {
+  color: var(--accent-color);
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.decorative-pattern {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.cave-symbol {
+  width: 100px;
+  height: 100px;
+  background-color: var(--cave-color);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 21L4 18 2 19l2 3h16l2-3-2-1-3 3-3-3-2 2-3-2z'/%3E%3Cpath d='M7 21v-2a5 5 0 0 1 5-5v0a5 5 0 0 1 5 5v2'/%3E%3Cpath d='M7 4v0a5 5 0 0 1 5 5v3'/%3E%3Cpath d='M17 4v0a5 5 0 0 0-5 5v3'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.story-content {
+  color: var(--text-color);
+  line-height: 1.8;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.lead {
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: clamp(1.1rem, 2.3vw, 1.4rem);
+  color: var(--accent-color);
+  margin: 2rem 0 1rem;
+}
+
+.quote-box {
+  background-color: var(--quote-bg);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-left: 4px solid var(--accent-color);
+  position: relative;
+}
+
+.quote-box p {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.quote-attribution {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+}
+
+.elder-quote {
+  background-color: var(--quote-bg);
+  border-left-color: #8b4513;
+}
+
+.closing-note {
+  font-style: italic;
+  color: var(--accent-color);
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--decorative-color);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .book-wrapper {
+    margin: 10px;
+  }
+
+  .book-content {
+    padding: 1.5rem;
+  }
+
+  .quote-box {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-content {
+    padding: 1rem;
+  }
+
+  .quote-box {
+    padding: 1rem;
+  }
+
+  .title-banner {
+    padding: 0.3rem 1rem;
+  }
+}
+
+/* Efectos de hover y animaciones */
+.book:hover {
+  transform: translateY(-5px);
+}
+
+.quote-box:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.story-content > * {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.story-content > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.story-content > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.story-content > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.story-content > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.story-content > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cave-symbol {
+  animation: pulse 4s infinite;
+}
+
